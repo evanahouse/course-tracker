@@ -26,13 +26,13 @@ class App extends React.Component {
   }
 
   getMyCourses = () => {
-    fetch("http://localhost:9393/mycourses")
+    fetch("http://localhost:9393/my_courses")
     .then(res => res.json())
     .then(myCourses => this.setState({myCourses}))
 }
 
   addCourse = (course) => {
-    fetch(`http://http://localhost:9393/mycourses`,{
+    fetch(`http://http://localhost:9393/my_courses`,{
         "method": 'POST',
         "headers": {
           "Content-Type": "application/json"
@@ -42,7 +42,7 @@ class App extends React.Component {
   }
 
   deleteCourse = () => {
-    
+
   }
   
   render() {

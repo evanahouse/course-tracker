@@ -8,8 +8,8 @@ class Course extends React.Component {
                 <span>{this.props.course.subject}</span>
                 <span>{this.props.course.number}</span>
                 <span>{this.props.course.time}</span>
-                <span>{this.props.course.teacher_id}</span>
-                <button className="addBtn" onClick={() => this.props.addCourse(this.props.course)}>+</button>
+                <span>{this.props.course.teacher}</span>
+                <button className="addBtn" hidden={false} onClick={() => this.props.addCourse(this.props.course)}>+</button>
                 
             </div>
         )
