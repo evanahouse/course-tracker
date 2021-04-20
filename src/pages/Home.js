@@ -8,7 +8,7 @@ render(){
                 <h1>browse courses</h1>
                 <div className="courseContainer">
                     {this.props.courses.map(course => {
-                        return <Course course={course} key={course.id} addBook={this.props.addBook}/>
+                        return <Course course={course} key={course.id} addCourse={this.props.addCourse}/>
                     })}
                 </div>
             </div>

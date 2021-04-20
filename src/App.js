@@ -16,16 +16,23 @@ class App extends React.Component {
   
   componentDidMount = () => {
     this.getCourses()
+    this.getMyCourses()
   }
 
   getCourses = () => {
-    fetch("http://localhost:3000/courses")
+    fetch("http://localhost:9393/courses")
     .then(res => res.json())
     .then(courses => this.setState({courses}))
   }
 
+  getMyCourses = () => {
+    fetch("http://localhost:9393/mycourses")
+    .then(res => res.json())
+    .then(myCourses => this.setState({myCourses}))
+}
+
   addCourse = (course) => {
-    fetch(`http://localhost:3000/mycourses`,{
+    fetch(`http://http://localhost:9393/mycourses`,{
         "method": 'POST',
         "headers": {
           "Content-Type": "application/json"
@@ -33,9 +40,13 @@ class App extends React.Component {
         "body": JSON.stringify(course)
       })
   }
+
+  deleteCourse = () => {
+    
+  }
   
   render() {
-   
+   console.log(this.state)
     return (
       <div>
         <Navigation />
@@ -44,13 +55,13 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route path="/browse">
-              <Home courses={this.state.courses} />
+              <Home courses={this.state.courses} addCourse={this.addCourse}/>
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Validation />
             </Route>
             <Route path="/user">
-              <MyCourses />
+              <MyCourses courses={this.state.myCourses} deleteCourse={this.deleteCourse}/>
             </Route>
           </Switch>
         </BrowserRouter>
