@@ -1,0 +1,61 @@
+{
+    "courses": [
+            {
+            "id":1,    
+            "subject": "Math",
+            "number": "3001",
+            "title": "Mulitvariable Calculus",
+            "time": "M-W-F",
+            "teacher_id": 1
+            },
+            {
+            "id":2,    
+            "subject": "History",
+            "number": "2011",
+            "title": "American History",
+            "time": "M-W-F",
+            "teacher_id": 2
+            },
+            {
+            "id":3,
+            "subject": "Music",
+            "number": "5001",
+            "title": "Music Theory",
+            "time": "T-Th",
+            "teacher_id": 3
+            },
+            {
+            "id":4,        
+            "subject": "Math",
+            "number": "2001",
+            "title": "Differential Equations",
+            "time": "M-W-F",
+            "teacher_id": 4
+            },
+            {
+            "id":5,    
+            "subject": "Political Science",
+            "number": "1001",
+            "title": "Intro to Political Science",
+            "time": "T-Th",
+            "teacher_id": 5
+            },
+            {
+            "id":6,        
+            "subject": "Sociology",
+            "number": "2001",
+            "title": "Intro to Sociology",
+            "time": "T-Th",
+            "teacher_id": 1
+            },
+            {
+            "id":7,        
+            "subject": "Forestry",
+            "number": "4001",
+            "title": "Lumberjack Science",
+            "time": "M-W-F",
+            "teacher_id": 2
+            }
+        
+        ]
+}
