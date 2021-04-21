@@ -18,6 +18,11 @@
     color: #fff;
     cursor: pointer;
 }
+.close-btn a {
+    color: #fff;
+    cursor: pointer;
+    
+}
 
 .form-content-left {
     background: linear-gradient(90deg,

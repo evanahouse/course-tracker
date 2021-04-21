@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Login from './pages/Login'
+
 import Home from './pages/Home'
 import MyCourses from './pages/MyCourses'
 import Validation from './pages/Validation'
@@ -73,6 +75,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/">
               <Validation />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/user">
               <MyCourses courses={this.state.myCourses} deleteCourse={this.deleteCourse}/>

@@ -2,13 +2,14 @@ import React from 'react'
 import useForm from './useForm'
 import validate from './validateInfo'
 import '../Form.css'
+import {Link} from 'react-router-dom'
 
 const FormSignup = ({submitForm}) => {
     const {handleChange, values, handleSubmit, errors} = useForm(submitForm, validate)
     return (
         <div className="form-content-right">
             <form className="form" onSubmit={handleSubmit}>
-                <h1>Get started with us today! Create your account by filling out the information below.</h1>
+                <h1>Fill out the information below to create an account:</h1>
                 <div className="form-inputs">
                     <label htmlFor="username" className="form-label">username</label>
                     <input 
@@ -62,8 +63,7 @@ const FormSignup = ({submitForm}) => {
                         {errors.password2 && <p>{errors.password2}</p>}
                 </div>
                 <button className="form-input-btn" type="submit">sign up</button> 
-                <span className="form-input-login">already have an account? login <a href="#">here</a> </span>
-            </form>
+                <span className="form-input-login">already have an account? login <Link to="/login">here</Link></span>            </form>
         </div>
     )
 }

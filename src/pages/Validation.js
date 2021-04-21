@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import FormSignup from '../components/FormSignup'
-import FormSuccess from '../components/FormSuccess'
 import '../Form.css'
+import {Link, Redirect} from 'react-router-dom'
 
 const Validation = () => {
     
@@ -14,7 +14,7 @@ const Validation = () => {
     return (
         <>
         <div className="form-container">
-            <span className="close-btn">x</span>
+            <span className="close-btn"><Link to="/browse" className="navBtn">x</Link></span>
             <div className="form-content-left">
                 <img src="#" alt="#" className="form-img"/>
             </div>
