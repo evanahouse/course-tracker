@@ -1,35 +1,30 @@
-import React from 'react'
-import '../Login.scss'
+import React, {useState} from 'react'
+import FormSignup from '../components/FormSignup'
+import FormSuccess from '../components/FormSuccess'
+import '../Form.css'
 
-class Validation extends React.Component {
-render(){
-        return (
-       
-            <div class="form-structor">
-	            <div class="signup">
-		            <h2 class="form-title" id="signup"><span>or</span>register</h2>
-		                <div class="form-holder">
-                            <input type="text" class="input" placeholder="Name" />
-                            <input type="email" class="input" placeholder="Email" />
-                            <input type="password" class="input" placeholder="Password" />
-		                </div>
-		                <button class="submit-btn">sign up</button>
-	            </div>
-	            <div class="login slide-up">
-		            <div class="center">
-                        <h2 class="form-title" id="login"><span>or</span>log in</h2>
-                        <div class="form-holder">
-                            <input type="email" class="input" placeholder="Email" />
-                            <input type="password" class="input" placeholder="Password" />
-                        </div>
-			        <button class="submit-btn">log in</button>
-		            </div>
-	            </div>
-            </div>
-        
-        )
+const Validation = () => {
+    
+    const[isSubmitted, setIsSubmitted] = useState(false)
+    
+    function submitForm() {
+        setIsSubmitted(true)
     }
 
+    return (
+        <>
+        <div className="form-container">
+            <span className="close-btn">x</span>
+            <div className="form-content-left">
+                <img src="#" alt="#" className="form-img"/>
+            </div>
+            <FormSignup />
+            {/* {!isSubmitted ? (<FormSignup submitForm={submitForm} />) : <FormSucess />} */}
+        </div>
+            
+        
+        </>
+    )
 }
 
 export default Validation
