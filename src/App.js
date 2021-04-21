@@ -13,7 +13,6 @@ class App extends React.Component {
       myCourses: []
     }
 
-  
   componentDidMount = () => {
     this.getCourses()
     this.getMyCourses()
@@ -32,27 +31,42 @@ class App extends React.Component {
 }
 
   addCourse = (course) => {
-    fetch(`http://http://localhost:9393/my_courses`,{
+    let update = [...this.state.myCourses]
+    fetch(`http://localhost:9393/my_courses`,{
         "method": 'POST',
         "headers": {
           "Content-Type": "application/json"
         },
         "body": JSON.stringify(course)
       })
+      .then(res => {
+        if(res.ok){
+          update.push(course)
+        }
+        return res.json()})
+      .then(this.setState({myCourses: update}))
   }
 
-  deleteCourse = () => {
-
+  deleteCourse = (course) => {
+    let updatedList = this.state.myCourses.filter(x => x.id !== course.id)
+    fetch(`http://localhost:9393/my_courses/${course.id}`,{
+        "method": 'DELETE',
+        "headers": {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(res => res.json())
+      .then(this.setState({myCourses: updatedList }))
   }
   
   render() {
-   console.log(this.state)
+  //  console.log(pathname)
     return (
       <div>
         <Navigation />
       <div>
         
-        <BrowserRouter>
+        
           <Switch>
             <Route path="/browse">
               <Home courses={this.state.courses} addCourse={this.addCourse}/>
@@ -64,7 +78,7 @@ class App extends React.Component {
               <MyCourses courses={this.state.myCourses} deleteCourse={this.deleteCourse}/>
             </Route>
           </Switch>
-        </BrowserRouter>
+        
       </div>
     </div>
     )

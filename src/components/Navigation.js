@@ -13,7 +13,7 @@ class Navigation extends React.Component {
                     <h1>course finder</h1>
                 </div>
                 <div className="logOut">
-                    <Link to="/" className="navBtn">log out</Link>
+                    <Link to="/" className="logOutBtn">log out</Link>
                 </div>
             </div>
         )
