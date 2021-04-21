@@ -16,9 +16,9 @@ class Course extends React.Component {
                 <span>{this.props.course.time}</span>
                 <span>{this.props.course.teacher}</span>
                 {pathname === "/browse" ? 
-                    <button className="addBtn"  onClick={() => this.props.addCourse(this.props.course)}>+</button> :
+                    <button className="addBtn"  onClick={() => this.props.onClick(this.props.course)}>+</button> :
                 
-                    <button className="addBtn"  onClick={() => this.props.deleteCourse(this.props.course)}>-</button>}
+                    <button className="addBtn"  onClick={() => this.props.onClick(this.props.course)}>-</button>}
                 
             </div>
         )
