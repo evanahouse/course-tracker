@@ -146,6 +146,15 @@ code {
   height: 64px;
 }
 
+.scheduleContainer{
+  margin: 10px;
+  padding: 20px;
+}
+
+/* .scheduleInstance{
+  background-color: white;
+} */
+
 .schedule {
   margin-top: 30px;
   display: grid;
