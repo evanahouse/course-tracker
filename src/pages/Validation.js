@@ -3,14 +3,14 @@ import FormSignup from '../components/FormSignup'
 import '../Form.css'
 import {Link, Redirect} from 'react-router-dom'
 
-const Validation = () => {
+const Validation = (props) => {
     
     const[isSubmitted, setIsSubmitted] = useState(false)
     
-    function submitForm() {
+    function submitForm(values) {
         setIsSubmitted(true)
+        props.register(values)
     }
-
     return (
         <>
         <div className="form-container">
@@ -18,8 +18,7 @@ const Validation = () => {
             <div className="form-content-left">
                 <img src="#" alt="#" className="form-img"/>
             </div>
-            <FormSignup />
-            {/* {!isSubmitted ? (<FormSignup submitForm={submitForm} />) : <FormSucess />} */}
+            {!isSubmitted ? (<FormSignup submitForm={submitForm} />) : <Redirect to="/browse"/>}
         </div>
             
         

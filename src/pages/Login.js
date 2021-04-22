@@ -3,14 +3,14 @@ import FormLogin from '../components/FormLogin'
 import '../Form.css'
 import {Link, Redirect} from 'react-router-dom'
 
-const Login = () => {
+const Login = (props) => {
     
     const[isSubmitted, setIsSubmitted] = useState(false)
     
-    function submitForm() {
+    function submitForm(values) {
         setIsSubmitted(true)
+        props.logIn(values)
     }
-
     return (
         <>
         <div className="form-container">
@@ -18,13 +18,9 @@ const Login = () => {
             <div className="form-content-left">
                 <img src="#" alt="#" className="form-img"/>
             </div>
-            <FormLogin />
-            {/* {!isSubmitted ? (<Redirect to="/browse"/>) : null} */}
+             {!isSubmitted ? (<FormLogin submitForm={submitForm} />) : <Redirect to="/browse"/>}
         </div>
-            
-        
         </>
     )
 }
-
 export default Login

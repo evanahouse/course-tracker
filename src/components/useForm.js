@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-const useForm = (callback, validate) => {
+const useForm = (submitForm, validate) => {
     const [values, setValues] = useState({
         username: '',
         email: '',
@@ -25,9 +25,9 @@ const useForm = (callback, validate) => {
 
     useEffect(() => {
         if(Object.keys(errors).length === 0 && isSubmitting){
-          callback()  
+          submitForm(values)  
         }
-    }, [errors])
+    }, [errors, isSubmitting])
 
     return {handleChange, values, handleSubmit, errors}
 }
