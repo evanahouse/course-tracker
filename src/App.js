@@ -3,9 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login'
 import Schedule from './pages/Schedule'
-
-import Home from './pages/Home'
-import MyCourses from './pages/MyCourses'
+// import Home from './pages/Home'
+// import MyCourses from './pages/MyCourses'
 import Validation from './pages/Validation'
 import Navigation from './components/Navigation'
 import CourseBrowser from './components/CourseBrowser';
