@@ -75,11 +75,24 @@ class App extends React.Component {
   }
 
   handleRegister = (values) => {
-    this.setState({
+    let student = {
+      name: values.username,
+      username: values.username,
+      email: values.email,
+      password: values.password
+    }
+    fetch(`http://localhost:9393/users`, {
+      "method": 'POST',
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": JSON.stringify(student)
+    })
+    .then(res => res.json())
+    .then(this.setState({
       loggedInStatus: true,
       user: values.username
-    })
-
+    }))
 
   }
 
