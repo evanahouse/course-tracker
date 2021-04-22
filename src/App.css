@@ -134,6 +134,16 @@ code {
   justify-content: center;
 }
 
+/* .dropdown-item {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  
+} */
+
 .mainContainer {
   margin-top: 40px;
   margin-right: 20px;

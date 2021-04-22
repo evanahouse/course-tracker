@@ -65,13 +65,21 @@ class App extends React.Component {
   }
 
   handleLogIn = (values) => {
-    this.setState({
-      loggedInStatus: true,
-      user: values.username
+    let student = {
+      name: values.username,
+      username: values.username,
+      email: values.email,
+      password: values.password
+    }
+    fetch(`http://localhost:9393/users`, {
+      "method": 'GET',
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": JSON.stringify(student)
     })
-
-
-    
+    .then(res => res.json())
+    .then(data => console.log(data))
   }
 
   handleRegister = (values) => {
