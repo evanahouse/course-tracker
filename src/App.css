@@ -151,60 +151,71 @@ code {
   padding: 20px;
 }
 
-/* .scheduleInstance{
-  background-color: white;
-} */
+.course-block{
+  text-align: center;
+  border: 2px solid black;
+  background-color: #6faa6f;
+}
+
+.course-block > h5 {
+  margin: 1px;
+}
 
 .schedule {
   margin-top: 30px;
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 15px;
   grid-template-rows:
     [days] auto
-    [time-0800] .001fr
-    [time-0815] .001fr
-    [time-0830] .001fr
-    [time-0845] .001fr
-    [time-0900] .001fr
-    [time-0915] .001fr
-    [time-0930] .001fr
-    [time-0945] .001fr
-    [time-1000] .001fr
-    [time-1015] .001fr
-    [time-1030] .001fr
-    [time-1045] .001fr
-    [time-1100] .001fr
-    [time-1115] .001fr
-    [time-1130] .001fr
-    [time-1145] .001fr
-    [time-1200] .001fr
-    [time-1215] .001fr
-    [time-1230] .001fr
-    [time-1245] .001fr
-    [time-1300] .001fr
-    [time-1315] .001fr
-    [time-1330] .001fr
-    [time-1345] .001fr
-    [time-1400] .001fr
-    [time-1415] .001fr
-    [time-1430] .001fr
-    [time-1445] .001fr
-    [time-1500] .001fr
-    [time-1515] .001fr
-    [time-1530] .001fr
-    [time-1545] .001fr
-    [time-1600] .001fr
-    [time-1615] .001fr
-    [time-1630] .001fr
-    [time-1645] .001fr
-    [time-1700] .001fr
-    [time-1715] .001fr
-    [time-1730] .001fr
-    [time-1745] .001fr
-    [time-1800] .001fr
-    [time-1815] .001fr
-    [time-1830] .001fr
-    [time-1845] .001fr;
+    [time-0800] 10px
+    [time-0815] 10px
+    [time-0830] 10px
+    [time-0845] 10px
+    [time-0900] 10px
+    [time-0915] 10px
+    [time-0930] 10px
+    [time-0945] 10px
+    [time-1000] 10px
+    [time-1015] 10px
+    [time-1030] 10px
+    [time-1045] 10px
+    [time-1100] 10px
+    [time-1115] 10px
+    [time-1130] 10px
+    [time-1145] 10px
+    [time-1200] 10px
+    [time-1215] 10px
+    [time-1230] 10px
+    [time-1245] 10px
+    [time-1300] 10px
+    [time-1315] 10px
+    [time-1330] 10px
+    [time-1345] 10px
+    [time-1400] 10px
+    [time-1415] 10px
+    [time-1430] 10px
+    [time-1445] 10px
+    [time-1500] 10px
+    [time-1515] 10px
+    [time-1530] 10px
+    [time-1545] 10px
+    [time-1600] 10px
+    [time-1615] 10px
+    [time-1630] 10px
+    [time-1645] 10px
+    [time-1700] 10px
+    [time-1715] 10px
+    [time-1730] 10px
+    [time-1745] 10px
+    [time-1800] 10px
+    [time-1815] 10px
+    [time-1830] 10px
+    [time-1845] 10px
+    [time-1900] 10px
+    [time-1915] 10px
+    [time-1930] 10px
+    [time-1945] 10px
+    [time-2000] 10px;
   grid-template-columns:
     [times] 4em
     [monday-start] 1fr
@@ -216,10 +227,13 @@ code {
 }
 
 .time-slot {
+  margin: 0px;
   grid-column: times;
 }
 
 .day-slot {
+  text-align: center;
+  font-weight: bold;
   grid-row: days;
   display: block;
   position: sticky;
