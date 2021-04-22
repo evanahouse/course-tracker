@@ -12,8 +12,9 @@ import CourseBrowser from './components/CourseBrowser';
 class App extends React.Component {
   state = {
     courses: [],
-    user: "",
-    myCourses: []
+    myCourses: [],
+    loggedInStatus: false,
+    user: []
   }
 
   componentDidMount = () => {
@@ -63,11 +64,33 @@ class App extends React.Component {
       .then(this.setState({ myCourses: updatedList }))
   }
 
+  handleLogIn = (values) => {
+    this.setState({
+      loggedInStatus: true,
+      user: values.username
+    })
+  }
+
+  handleRegister = (values) => {
+    this.setState({
+      loggedInStatus: true,
+      user: values.username
+    })
+  }
+
+  handleLogout = (e) => {
+    e.stopPropagation()
+    this.setState({
+      loggedInStatus: false,
+      user: []
+    })
+  }
+
   render() {
-    //  console.log(pathname)
+     console.log(this.state)
     return (
       <div>
-        <Navigation />
+        <Navigation loggedIn={this.state.loggedInStatus} handleLogout={this.handleLogout}/>
         <div>
 
 
@@ -77,10 +100,10 @@ class App extends React.Component {
               <CourseBrowser showing={"all"} courses={this.state.courses} onClick={this.addCourse} />
             </Route>
             <Route exact path="/">
-              <Validation />
+              <Validation register={this.handleRegister} />
             </Route>
             <Route path="/login">
-              <Login />
+              <Login logIn={this.handleLogIn}/>
             </Route>
             <Route path="/schedule">
               <Schedule courses={this.state.myCourses}/>
