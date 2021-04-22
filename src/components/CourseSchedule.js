@@ -26,9 +26,6 @@ const getDay = (block) => block.map(course => course.time.split(" ")[0])
 const CourseSchedule = (props) => {
     let block = props.courses.filter(course => props.timeSlot[0] === timeToString(course.time, 0))
     block = block.sort((a, b) => a.time.split(" ")[0] < b.time.split(" ")[0] ? -1 : 1)
-    if (block.length > 0) {
-        console.log(block)
-    }
     return (
         <React.Fragment>
             <h2 className="time-slot" style={{ gridRow: `time-${props.timeSlot[0]}` }}>{formatTime(props.timeSlot[0])}</h2>

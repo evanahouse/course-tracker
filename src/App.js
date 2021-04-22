@@ -28,12 +28,6 @@ class App extends React.Component {
       .then(courses => this.setState({ courses }))
   }
 
-  getMyCourses = () => {
-    fetch("http://localhost:9393/my_courses")
-      .then(res => res.json())
-      .then(myCourses => this.setState({ myCourses }))
-  }
-
   addCourse = (course) => {
     let user = this.state.user
     let update = [...this.state.myCourses]
