@@ -119,7 +119,7 @@ class App extends React.Component {
     //  console.log(this.state)
     return (
       <div>
-        <Navigation loggedIn={this.state.loggedInStatus} handleLogout={this.handleLogout}/>
+        <Navigation user={this.state.user} loggedIn={this.state.loggedInStatus} handleLogout={this.handleLogout}/>
         <div>
 
 
