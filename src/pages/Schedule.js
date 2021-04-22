@@ -3,7 +3,7 @@ import CourseSchedule from '../components/CourseSchedule'
 
 const Schedule = (props) => {
     let times = ["0800", "0830", "0900", "0930", "1000", "1030", "1100", "1130", "1200", "1230", "1300", "1330", "1400", "1430", "1500", "1530", "1600", "1630", "1700", "1730", "1800", "1830"];
-
+    
     return (
         <div className="scheduleContainer">
             <div className="schedule" aria-labelledby="schedule-heading">
