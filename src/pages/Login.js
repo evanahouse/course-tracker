@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import FormLogin from '../components/FormLogin'
 import '../Form.css'
 import {Link, Redirect} from 'react-router-dom'
+import Logo from "../images/main.png"
 
 const Login = (props) => {
     
@@ -16,7 +17,8 @@ const Login = (props) => {
         <div className="form-container">
             <span className="close-btn"><Link to="/browse" className="navBtn">x</Link></span>
             <div className="form-content-left">
-                <img src="#" alt="#" className="form-img"/>
+            <img src={Logo} alt="logo" className="form-img"/>
+
             </div>
              {!isSubmitted ? (<FormLogin submitForm={submitForm} />) : <Redirect to="/browse"/>}
         </div>
