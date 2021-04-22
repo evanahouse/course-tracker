@@ -14,7 +14,7 @@ class MyCourses extends React.Component {
                         return <Course course={course} key={course.id} deleteCourse={this.props.deleteCourse} />
                     })}
                 </div>
-                <div className="schedule" aria-labelledby="schedule-heading">
+                {/* <div className="schedule" aria-labelledby="schedule-heading">
                     <span className="day-slot" aria-hidden="true" style={{ gridColumn: "monday", gridRow: "days" }}>Monday</span>
                     <span className="day-slot" aria-hidden="true" style={{ gridColumn: "tuesday", gridRow: "days" }}>Tuesday</span>
                     <span className="day-slot" aria-hidden="true" style={{ gridColumn: "wednesday", gridRow: "days" }}>Wednesday</span>
@@ -23,7 +23,7 @@ class MyCourses extends React.Component {
                     {times.map(time => {
                         return <CourseSchedule key={time} timeSlot={time} courses={this.props.courses} />
                     })}
-                </div>
+                </div> */}
             </div>
         )
     }

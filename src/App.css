@@ -128,7 +128,7 @@ code {
   margin-right: 20px;
   margin-left: 20px;
   padding: 4px;
-  background-color: #C4C4C4;
+  /* background-color: #C4C4C4; */
   height: 64px;
 }
 .trash {
