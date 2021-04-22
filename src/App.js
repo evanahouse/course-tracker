@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login'
+import Schedule from './pages/Schedule'
 
 import Home from './pages/Home'
 import MyCourses from './pages/MyCourses'
@@ -81,6 +82,9 @@ class App extends React.Component {
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/schedule">
+              <Schedule courses={this.state.myCourses}/>
             </Route>
             <Route path="/user">
               {/* <MyCourses courses={this.state.myCourses} deleteCourse={this.deleteCourse} /> */}

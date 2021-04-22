@@ -7,7 +7,9 @@ class Navigation extends React.Component {
             <div className="navbar">
                 <div className="navLinks">
                     <Link to="/user" className="navBtn">my courses</Link>
-                    <Link to="/browse" className="navBtn">find courses</Link>
+                    <Link to="/browse" className="navBtn">browse</Link>
+                    <Link to="/schedule" className="navBtn">schedule</Link>
+                    
                 </div>
                 <div className="navLogo">
                       <h1>course finder</h1>
