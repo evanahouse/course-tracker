@@ -21,6 +21,7 @@ class Navigation extends React.Component {
                   </div>
                   :
                   <div className="logInBtn">
+                  <p>logged in as {this.props.user}</p>
                   <Link to="/login" className="logOutBtn" onClick={(e) => this.props.handleLogout(e)}>logout</Link>
                 </div>
                 }
