@@ -19,7 +19,7 @@ class App extends React.Component {
 
   componentDidMount = () => {
     this.getCourses()
-    this.getMyCourses()
+    // this.getMyCourses()
   }
 
   getCourses = () => {
@@ -35,13 +35,15 @@ class App extends React.Component {
   }
 
   addCourse = (course) => {
+    let user = this.state.user
     let update = [...this.state.myCourses]
+    console.log(this.state.user)
     fetch(`http://localhost:9393/my_courses`, {
       "method": 'POST',
       "headers": {
         "Content-Type": "application/json"
       },
-      "body": JSON.stringify(course)
+      "body": JSON.stringify({course, user: user})
     })
       .then(res => {
         if (res.ok) {
@@ -78,7 +80,13 @@ class App extends React.Component {
       "body": JSON.stringify(student)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(user => {
+      this.setState({
+        loggedInStatus:true,
+        user: user.name,
+        myCourses: user.courses
+      })
+    })
   }
 
   handleRegister = (values) => {
@@ -112,7 +120,7 @@ class App extends React.Component {
   }
 
   render() {
-     console.log(this.state)
+    //  console.log(this.state)
     return (
       <div>
         <Navigation loggedIn={this.state.loggedInStatus} handleLogout={this.handleLogout}/>
