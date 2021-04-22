@@ -68,11 +68,10 @@ class App extends React.Component {
     let student = {
       name: values.username,
       username: values.username,
-      email: values.email,
       password: values.password
     }
     fetch(`http://localhost:9393/users`, {
-      "method": 'GET',
+      "method": 'POST',
       "headers": {
         "Content-Type": "application/json"
       },
