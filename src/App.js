@@ -50,11 +50,13 @@ class App extends React.Component {
 
   deleteCourse = (course) => {
     let updatedList = this.state.myCourses.filter(x => x.id !== course.id)
+    console.log(course)
     fetch(`http://localhost:9393/my_courses/${course.id}`, {
       "method": 'DELETE',
       "headers": {
         "Content-Type": "application/json"
-      }
+      },
+      "body": JSON.stringify({user: this.state.user})
     })
       .then(res => res.json())
       .then(this.setState({ myCourses: updatedList }))
