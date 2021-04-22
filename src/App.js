@@ -69,6 +69,9 @@ class App extends React.Component {
       loggedInStatus: true,
       user: values.username
     })
+
+
+    
   }
 
   handleRegister = (values) => {
@@ -76,6 +79,8 @@ class App extends React.Component {
       loggedInStatus: true,
       user: values.username
     })
+
+
   }
 
   handleLogout = (e) => {

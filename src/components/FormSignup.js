@@ -5,7 +5,8 @@ import '../Form.css'
 import {Link} from 'react-router-dom'
 
 const FormSignup = ({submitForm}) => {
-    const {handleChange, values, handleSubmit, errors} = useForm(submitForm, validate)
+    const mode = "register"
+    const {handleChange, values, handleSubmit, errors} = useForm(mode, submitForm, validate)
     return (
         <div className="form-content-right">
             <form className="form" onSubmit={handleSubmit}>

@@ -6,7 +6,8 @@ import {Link} from 'react-router-dom'
 
 
 const FormLogin = ({submitForm}) => {
-    const {handleChange, values, handleSubmit, errors} = useForm(submitForm, validate)
+    const mode = "login"
+    const {handleChange, values, handleSubmit, errors} = useForm(mode, submitForm, validate)
     return (
         <div className="form-content-right">
             <form className="form" onSubmit={handleSubmit}>
