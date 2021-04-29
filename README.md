@@ -36,3 +36,5 @@ The my courses page gives the user a modular of courses that they are enrolled i
 Once the user has selected all of their courses, they may view their schedule using the navigation "schedule" tab. The block height of each course time corresponds with the duration of class time. The user may not add a course with time conflicts. If they try to do so, the application logic prevents this behavior. At the end of the session, the user may choose to logout.
 
 ### The back end repository for this application may be viewed [here](https://github.com/bcheung98/Phase_3_Ruby_Group_Project_Rack_React).
+
+Please note the login form on this application references the login form Brian Design on YouTube provides at https://www.youtube.com/watch?v=KGFG-yQD7Dw&t=1230s&ab_channel=BrianDesign . This code is refactored in implemented in this project.

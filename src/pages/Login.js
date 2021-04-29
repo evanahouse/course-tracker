@@ -20,6 +20,8 @@ const Login = (props) => {
             <img src={Logo} alt="logo" className="form-img"/>
 
             </div>
+            {/* Note form used in this project was inspired by Brian Design on Youtube in the public domain
+              https://www.youtube.com/watch?v=KGFG-yQD7Dw&t=1230s&ab_channel=BrianDesign */}
              {!isSubmitted ? (<FormLogin submitForm={submitForm} />) : <Redirect to="/browse"/>}
         </div>
         </>
